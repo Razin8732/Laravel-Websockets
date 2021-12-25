@@ -23,4 +23,25 @@ php artisan optimize
 
 
 jQuery dataTable server side processing laravel refrence  
-https://shareurcodes.com/blog/laravel%20datatables%20server%20side%20processing
+https://shareurcodes.com/blog/laravel%20datatables%20server%20side%20processing 
+
+
+php artisan serve --host=laravel-websockets.test
+# #########################################################3
+Web Socket installation start here
+
+composer require beyondcode/laravel-websockets
+
+php artisan vendor:publish --provider="BeyondCode\LaravelWebSockets\WebSocketsServiceProvider" --tag="migrations"
+
+php artisan vendor:publish --provider="BeyondCode\LaravelWebSockets\WebSocketsServiceProvider" --tag="config"
+
+composer require pusher/pusher-php-server
+
+php artisan make:event UpdateUserTable
+
+php artisan serve
+php artisan websockets:serve
+
+npm install laravel-echo pusher-js
+
