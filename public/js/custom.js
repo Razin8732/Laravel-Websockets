@@ -24,12 +24,4 @@ $(function() {
             alert('Something went wrong. Please try again.');
         }, 1000);
     }
-
-    Echo.channel('home')
-        .listen('UpdateUserTable', (e) => {
-            if (e.message == 'need to update table') {
-                $('#users_listing').DataTable().ajax.reload();
-                // console.log(e.message);
-            }
-        });
 });
