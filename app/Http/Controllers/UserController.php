@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Events\UpdateUserTable;
 
 
 class UserController extends Controller
@@ -107,6 +108,7 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
         if ($create_user_rsp) {
+            event(new UpdateUserTable('need to update table'));
             return redirect()->back()->with('success', 'User created successfully');
         } else {
             return redirect()->back()->with('error', 'User creation failed');
