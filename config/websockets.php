@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\IsAdminMiddleware;
 use BeyondCode\LaravelWebSockets\Dashboard\Http\Middleware\Authorize;
 
 return [
@@ -71,6 +72,7 @@ return [
     'middleware' => [
         'web',
         Authorize::class,
+        IsAdminMiddleware::class,
     ],
 
     'statistics' => [
@@ -90,7 +92,7 @@ return [
         /*
          * Here you can specify the interval in seconds at which statistics should be logged.
          */
-        'interval_in_seconds' => 60,
+        'interval_in_seconds' => 1,
 
         /*
          * When the clean-command is executed, all recorded statistics older than

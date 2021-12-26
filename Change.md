@@ -12,19 +12,20 @@ C:\Windows\System32\drivers\etc\hosts
 php artisan cache:clear
 php artisan config:clear
 php artisan route:clear
-
-
-composer require barryvdh/laravel-debugbar --dev
-
-
 php artisan config:cache
 php artisan route:cache
 php artisan optimize
 
 
+composer require barryvdh/laravel-debugbar --dev
+
+
+
+
 jQuery dataTable server side processing laravel refrence  
 https://shareurcodes.com/blog/laravel%20datatables%20server%20side%20processing 
 
+D:\xampp\htdocs\laravel-websockets\Change.md
 
 php artisan serve --host=laravel-websockets.test
 # #########################################################3
@@ -45,3 +46,12 @@ php artisan websockets:serve
 
 npm install laravel-echo pusher-js
 
+
+<!-- From Tinker ( php artisan tinker ) -->
+event(new App\Events\UpdateUserTable("need to update
+table"))
+
+
+
+# APP_URL=http://laravel-websockets.test/
+# APP_PORT=8000
